@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Halaman Contact</title>
+    <link rel="stylesheet" href="Style/Style.css" />
+    <link rel="icon" href="Assets/Images/logo2.png" type="image/x-icon" />
+    <script
+      src="https://kit.fontawesome.com/81634d0f93.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav>
+      <div id="left-nav">
+        <ul>
+          <li>
+            <a class="nav-option" href="https://dumbways.id/" target="_blank">
+              <img src="Assets/Images/logo2.png" alt="DumbWays ID logo" />
+            </a>
+          </li>
+
+          <li class="nav-option-li">
+            <a class="nav-option" href="Index.html">HOME</a>
+          </li>
+
+          <li class="nav-option-li">
+            <a
+              class="nav-option"
+              href="Personal-Project.html"
+              style="font-weight: normal"
+              >MY PROJECT</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div id="right-nav">
+        <!-- <i class="fa-solid fa-moon fa-2xl fa-fw" id="theme-switch"></i> -->
+
+        <a href="#">
+          <button type="button">Contact</button>
+        </a>
+      </div>
+
+      <button id="nav-toggle" onclick="toggleOverlay()">
+        <i class="fa-solid fa-bars-staggered fa-2xl"></i>
+      </button>
+    </nav>
+
+    <div id="toggle-overlay">
+      <a href="Index.html" class="nav-option"> HOME </a>
+      <a
+        href="Personal-Project.html"
+        class="nav-option"
+        style="font-weight: normal"
+      >
+        MY PROJECT
+      </a>
+      <a href="Contact-Form.html">
+        <button type="button">Contact</button>
+      </a>
+    </div>
+
+    <h2 class="page-title">Contact Me</h2>
+
+    <form>
+      <div>
+        <label class="mandatory-field" for="name-input">Name</label>
+        <input
+          type="text"
+          placeholder="Your Name"
+          id="name-input"
+          autocomplete="off"
+          autocapitalize="words"
+          required
+        />
+      </div>
+
+      <div>
+        <label class="mandatory-field" for="email-input">Email</label>
+        <input
+          type="email"
+          placeholder="Rifki@gmail.com"
+          id="email-input"
+          autocomplete="off"
+          required
+        />
+      </div>
+
+      <div>
+        <label class="mandatory-field" for="phone-input">Phone</label>
+        <input
+          type="number"
+          placeholder="+62xxxxxxxxxx"
+          id="phone-input"
+          autocomplete="off"
+          required
+        />
+      </div>
+
+      <div>
+        <label class="mandatory-field" for="subject-input">Subject</label>
+        <div id="select-wrap">
+          <select id="subject-input" required>
+            <option value="" hidden>Select</option>
+            <option value="Suggestion">Ui Ux</option>
+            <option value="Collaboration request">Data Analist</option>
+            <option value="Meeting request">Teknik Inpormatika</option>
+            <option value="Something else">Industri</option>
+          </select>
+          <span id="drop-down"><i class="fa-solid fa-caret-down"></i></span>
+        </div>
+      </div>
+
+      <div>
+        <label for="message-input">Message</label>
+        <textarea
+          placeholder="Your Message...."
+          id="message-input"
+          autocomplete="off"
+          autocapitalize="sentences"
+        ></textarea>
+      </div>
+
+      <button class="submit-button" type="submit" onclick="sendMessage()">
+        Kirim
+      </button>
+    </form>
+
+    <script src="Js/Contact-form.js"></script>
+    <script src="/Js/Mobile-Nav-Tonggle.js"></script>
+  </body>
+</html>

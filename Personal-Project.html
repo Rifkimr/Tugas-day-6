@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Personal</title>
+    <link rel="icon" href="/Assets/Images/logo2.png" type="image/x-icon" />
+    <link rel="stylesheet" href="Style/Style.css" />
+    <script
+      src="https://kit.fontawesome.com/81634d0f93.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav>
+      <div id="left-nav">
+        <ul>
+          <li>
+            <a class="nav-option" href="https://dumbways.id/" target="_blank">
+              <img src="Assets/Images/logo2.png" alt="DumbWays ID logo" />
+            </a>
+          </li>
+
+          <li class="nav-option-li">
+            <a class="nav-option" href="Index.html">HOME</a>
+          </li>
+
+          <li class="nav-option-li">
+            <a class="nav-option" href="#" style="font-weight: normal"
+              >MY PROJECT</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div id="right-nav">
+        <!-- <i class="fa-solid fa-moon fa-2xl fa-fw" id="theme-switch"></i> -->
+
+        <a href="Contact-Form.html">
+          <button type="button">Contact</button>
+        </a>
+      </div>
+
+      <button id="nav-toggle" onclick="toggleOverlay()">
+        <i class="fa-solid fa-bars-staggered fa-2xl"></i>
+      </button>
+    </nav>
+
+    <div id="toggle-overlay">
+      <a href="Index.html" class="nav-option"> HOME </a>
+      <a
+        href="Personal-Project.html"
+        class="nav-option"
+        style="font-weight: normal"
+      >
+        MY PROJECT
+      </a>
+      <a href="Contact-Form.html">
+        <button type="button">Contact</button>
+      </a>
+    </div>
+
+    <h2 class="page-title">NEW PROJECT</h2>
+    <form onsubmit="postProject(event)">
+      <div>
+        <label class="mandatory-field" for="project-name-input"
+          >Project Name</label
+        >
+        <input
+          type="text"
+          placeholder="Nama project"
+          id="project-name-input"
+          autocomplete="off"
+          autocapitalize="words"
+          required
+        />
+      </div>
+
+      <div id="date-split">
+        <div>
+          <label class="mandatory-field" for="start-date-input"
+            >Start Date</label
+          >
+          <input type="date" id="start-date-input" required />
+        </div>
+        <div>
+          <label class="mandatory-field" for="finish-date-input"
+            >Finish Date</label
+          >
+          <input type="date" id="finish-date-input" required />
+        </div>
+      </div>
+
+      <div>
+        <label class="mandatory-field" for="description-input"
+          >Description</label
+        >
+        <textarea
+          placeholder="Yourr Description"
+          id="description-input"
+          autocomplete="off"
+          autocapitalize="sentences"
+        ></textarea>
+      </div>
+
+      <div>
+        <label class="mandatory-field">Technologies</label>
+        <div id="checkbox-group">
+          <div class="checkbox-sub-group">
+            <input type="checkbox" id="js-check" class="multi-input" />
+            <label for="js-check" class="check-label">Javascript</label>
+          </div>
+          <div class="checkbox-sub-group">
+            <input type="checkbox" id="bootstrap-check" class="multi-input" />
+            <label for="bootstrap-check" class="check-label">Bootstrap</label>
+          </div>
+          <div class="checkbox-sub-group">
+            <input type="checkbox" id="go-check" class="multi-input" />
+            <label for="go-check" class="check-label">Go</label>
+          </div>
+          <div class="checkbox-sub-group">
+            <input type="checkbox" id="react-check" class="multi-input" />
+            <label for="react-check" class="check-label">React</label>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label class="mandatory-field">Upload Image</label>
+        <div id="image-input-wrap">
+          <label for="image-input">
+            <p>Choose</p>
+            <div id="image-file-name"></div>
+            <i class="fa-solid fa-paperclip fa-fw"></i>
+          </label>
+          <input
+            type="file"
+            id="image-input"
+            accept="image/*"
+            onchange="showFileName()"
+            required
+            hidden
+          />
+        </div>
+      </div>
+
+      <button class="submit-button" type="submit" onclick="emptyFormAlert()">
+        Post
+      </button>
+    </form>
+    <main id="wrap-up-the-scroll">
+      <h2 class="page-title">SHOW YOUR PROJECTS</h2>
+
+      <section id="wrap-up-the-cards">
+        <div class="project-preview-card">
+          <img src="/Assets/Images/image-1.jpg" alt="Smartphone" />
+          <a href="Detail-Project.html">
+            <h4>Project 1 - 2023</h4>
+          </a>
+          <p class="duration">Duration: 12 Hours</p>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Exercitationem libero aut?
+          </p>
+          <div class="tech-icons">
+            <i class="fa-brands fa-square-js fa-xl fa-fw" id="js-icon"></i>
+            <i
+              class="fa-brands fa-bootstrap fa-xl fa-fw"
+              id="bootstrap-icon"
+            ></i>
+            <i class="fa-brands fa-golang fa-xl fa-fw" id="go-icon"></i>
+            <i class="fa-brands fa-react fa-xl fa-fw" id="react-icon"></i>
+          </div>
+          <div class="card-buttons">
+            <button class="edit-button">Edit</button>
+            <button class="delete-button">Delete</button>
+          </div>
+        </div>
+
+        <div class="project-preview-card">
+          <img src="/Assets/Images/image-2.jpg" alt="Desktop and Laptop" />
+          <a href="#">
+            <h4>Project 2 - 2023</h4>
+          </a>
+          <p class="duration">Duration: 6 Days</p>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Exercitationem libero aut?
+          </p>
+          <div class="tech-icons">
+            <i class="fa-brands fa-square-js fa-xl"></i>
+            <i class="fa-brands fa-bootstrap fa-xl"></i>
+            <i class="fa-brands fa-golang fa-xl"></i>
+            <i class="fa-brands fa-react fa-xl fa-fw"></i>
+          </div>
+          <div class="card-buttons">
+            <button class="edit-button">Edit</button>
+            <button class="delete-button">Delete</button>
+          </div>
+        </div>
+
+        <div class="project-preview-card">
+          <img src="/Assets/Images/image-10.jpg" alt="Desktop and Laptop too" />
+          <a href="#">
+            <h4>Project 3 - 2023</h4>
+          </a>
+          <p class="duration">Duration: 7 Weeks</p>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Exercitationem libero aut?
+          </p>
+          <div class="tech-icons">
+            <i class="fa-brands fa-square-js fa-xl"></i>
+            <i class="fa-brands fa-bootstrap fa-xl"></i>
+            <i class="fa-brands fa-golang fa-xl"></i>
+            <i class="fa-brands fa-react fa-xl fa-fw"></i>
+          </div>
+          <div class="card-buttons">
+            <button class="edit-button">Edit</button>
+            <button class="delete-button">Delete</button>
+          </div>
+        </div>
+
+        <div class="project-preview-card">
+          <img src="/Assets/Images/image-6.jpg" alt="Server Room" />
+          <a href="#">
+            <h4>Project 4 - 2023</h4>
+          </a>
+          <p class="duration">Duration: 7 months</p>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Exercitationem libero aut?
+          </p>
+          <div class="tech-icons">
+            <i class="fa-brands fa-square-js fa-xl"></i>
+            <i class="fa-brands fa-bootstrap fa-xl"></i>
+            <i class="fa-brands fa-golang fa-xl"></i>
+            <i class="fa-brands fa-react fa-xl fa-fw"></i>
+          </div>
+          <div class="card-buttons">
+            <button class="edit-button">Edit</button>
+            <button class="delete-button">Delete</button>
+          </div>
+        </div>
+
+        <div class="project-preview-card">
+          <img src="/Assets/Images/image-7.jpg" alt="Fish Pond" />
+          <a href="#">
+            <h4>Project 5 - 2023</h4>
+          </a>
+          <p class="duration">Duration: 8 Years</p>
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Exercitationem libero aut?
+          </p>
+          <div class="tech-icons">
+            <i class="fa-brands fa-square-js fa-xl"></i>
+            <i class="fa-brands fa-bootstrap fa-xl"></i>
+            <i class="fa-brands fa-golang fa-xl"></i>
+            <i class="fa-brands fa-react fa-xl fa-fw"></i>
+          </div>
+          <div class="card-buttons">
+            <button class="edit-button">Edit</button>
+            <button class="delete-button">Delete</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="Js/Personal-Project.js"></script>
+    <script src="/Js/Mobile-Nav-Tonggle.js"></script>
+  </body>
+</html>
